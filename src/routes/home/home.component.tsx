@@ -3,7 +3,6 @@ import FeaturedRecipes from "@/components/featured-recipes/featured-recipes.comp
 const Home = () => {
   return (
     <>
-      <h1>Hello World</h1>
       <FeaturedRecipes />
     </>
   );
