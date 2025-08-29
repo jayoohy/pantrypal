@@ -1,8 +1,8 @@
 import { Eye, MessagesSquare, Play } from "lucide-react";
 
-const FeaturedRecipes = () => {
+const HeroSection = () => {
   return (
-    <div className="bg-[url(/fr-1.jpg)] h-[38rem] rounded-md bg-cover flex justify-center mx-56 relative -z-10 mt-10">
+    <div className="bg-[url(/fr-1.jpg)] h-[38rem] rounded-md bg-cover flex justify-center mx-56 relative -z-10 mt-24">
       <div className="absolute bottom-38 bg-white p-4 rounded-full z-10 shadow-xl">
         <Play fill="black" />
       </div>
@@ -14,11 +14,11 @@ const FeaturedRecipes = () => {
         <div className="flex">
           <p className="p-2">November 24, 2018</p>
           <span className="flex p-2">
-            <Eye />
+            <Eye className="pr-1" />
             <p>1551</p>
           </span>
           <span className="flex p-2">
-            <MessagesSquare />
+            <MessagesSquare className="pr-1" />
             <p>0</p>
           </span>
         </div>
@@ -27,4 +27,4 @@ const FeaturedRecipes = () => {
   );
 };
 
-export default FeaturedRecipes;
+export default HeroSection;
