@@ -6,18 +6,28 @@ const LatestPost = () => {
     <div className="grid grid-cols-3 gap-5">
       <Card>
         <CardContent>
-          <img src="lp-1.jpg" alt="food" className="w-full" />
+          <img
+            src="lp-1.jpg"
+            alt="food"
+            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+          />
         </CardContent>
         <CardFooter className="flex flex-col items-start">
-          <p className="text-red-500 hover:text-black">Vegan</p>
+          <p className="text-red-500 hover:text-black dark:hover:text-white">
+            Vegan
+          </p>
           <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
             Hawaiian Chicken Poke Bowl
           </h1>
           <div className="flex">
-            <p className="text-gray-600 hover:text-black">November 24, 2018</p>
+            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+              November 24, 2018
+            </p>
             <span className="flex px-2">
               <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 hover:text-black">0</p>
+              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+                0
+              </p>
             </span>
           </div>
         </CardFooter>
@@ -25,18 +35,28 @@ const LatestPost = () => {
 
       <Card>
         <CardContent>
-          <img src="lp-2.jpg" alt="food" className="w-full" />
+          <img
+            src="lp-2.jpg"
+            alt="food"
+            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+          />
         </CardContent>
         <CardFooter className="flex flex-col items-start">
-          <p className="text-red-500 hover:text-black">Vegan</p>
+          <p className="text-red-500 hover:text-black dark:hover:text-white">
+            Vegan
+          </p>
           <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
             Leek Soup With Pasta
           </h1>
           <div className="flex">
-            <p className="text-gray-600 hover:text-black">November 24, 2018</p>
+            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+              November 24, 2018
+            </p>
             <span className="flex px-2">
               <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 hover:text-black">0</p>
+              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+                0
+              </p>
             </span>
           </div>
         </CardFooter>
@@ -44,18 +64,28 @@ const LatestPost = () => {
 
       <Card>
         <CardContent>
-          <img src="lp-3.jpg" alt="food" className="w-full" />
+          <img
+            src="lp-3.jpg"
+            alt="food"
+            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+          />
         </CardContent>
         <CardFooter className="flex flex-col items-start">
-          <p className="text-red-500 hover:text-black">Vegan</p>
+          <p className="text-red-500 hover:text-black dark:hover:text-white">
+            Vegan
+          </p>
           <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
             Zucchini-basil Soup With Chickpeas
           </h1>
           <div className="flex">
-            <p className="text-gray-600 hover:text-black">November 24, 2018</p>
+            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+              November 24, 2018
+            </p>
             <span className="flex px-2">
               <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 hover:text-black">0</p>
+              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+                0
+              </p>
             </span>
           </div>
         </CardFooter>

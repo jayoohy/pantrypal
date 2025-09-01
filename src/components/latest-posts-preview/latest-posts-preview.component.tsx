@@ -4,7 +4,7 @@ const LatestPostsPreview = () => {
   return (
     <div className="mx-56 flex justify-center items-center flex-col">
       <h1 className="text-5xl font-normal text-center mb-6">Latest Posts</h1>
-      <p className="text-center text-gray-600 mx-65 mb-12">
+      <p className="text-center text-gray-600 dark:text-white mx-65 mb-12">
         Looking for cooking inspiration? Below are our newly developed recipes
         for any occasion - check out and try them!
       </p>

@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 export function NavigationMenuDemo() {
   return (
     <div className="relative">
-      <div className="flex justify-between py-2 px-4 border-b-2 border-b-accent fixed top-0 right-0 left-0 backdrop-blur-sm z-50">
+      <div className="flex justify-between py-2 px-4 border-b-2 border-b-accent fixed top-0 right-0 left-0 backdrop-blur-sm bg-white/40 dark:bg-black/40 z-50">
         <div>
           <h1 className="text-xl font-semibold">PantryPal</h1>
         </div>
@@ -68,11 +68,18 @@ export function NavigationMenuDemo() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link to="#">Home</Link>
+                  <Link
+                    className="bg-transparent hover:text-red-600 hover:bg-transparent"
+                    to="#"
+                  >
+                    Home
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent hover:text-red-600! hover:bg-transparent!">
+                  Categories
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[200px] gap-4">
                     <li>
@@ -90,7 +97,9 @@ export function NavigationMenuDemo() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Featured</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent hover:text-red-600! hover:bg-transparent!">
+                  Featured
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {components.map((component) => (
@@ -110,9 +119,9 @@ export function NavigationMenuDemo() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link to="#">
-                    <div className="flex">
-                      <ThumbsUp className="h-[1.2rem] w-[1.2rem] text-black mr-2 mt-0.5" />
+                  <Link className="bg-transparent hover:bg-transparent" to="#">
+                    <div className="flex hover:text-red-600">
+                      <ThumbsUp className="h-[1.2rem] w-[1.2rem] text-black hover:text-red-600 dark:text-white mr-2 mt-0.5" />
                       Easy
                     </div>
                   </Link>
@@ -123,7 +132,12 @@ export function NavigationMenuDemo() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link to="#">About</Link>
+                  <Link
+                    className="bg-transparent hover:text-red-600 hover:bg-transparent"
+                    to="#"
+                  >
+                    About
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -131,7 +145,12 @@ export function NavigationMenuDemo() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link to="#">Contact</Link>
+                  <Link
+                    className="bg-transparent hover:text-red-600 hover:bg-transparent"
+                    to="#"
+                  >
+                    Contact
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
