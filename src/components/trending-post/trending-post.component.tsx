@@ -6,7 +6,7 @@ const TrendingPost = () => {
     <Card className="bg-orange-50 dark:bg-gray-800">
       <CardContent>
         <img
-          src="lp-1.jpg"
+          src="images/lp-1.jpg"
           alt="food"
           className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
         />

@@ -7,7 +7,7 @@ const LatestPost = () => {
       <Card>
         <CardContent>
           <img
-            src="lp-1.jpg"
+            src="images/lp-1.jpg"
             alt="food"
             className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
           />
@@ -36,7 +36,7 @@ const LatestPost = () => {
       <Card>
         <CardContent>
           <img
-            src="lp-2.jpg"
+            src="images/lp-2.jpg"
             alt="food"
             className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
           />
@@ -65,7 +65,7 @@ const LatestPost = () => {
       <Card>
         <CardContent>
           <img
-            src="lp-3.jpg"
+            src="images/lp-3.jpg"
             alt="food"
             className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
           />

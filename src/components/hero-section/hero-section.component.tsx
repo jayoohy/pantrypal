@@ -2,7 +2,7 @@ import { Eye, MessagesSquare, Play } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <div className="bg-[url(/fr-2.jpg)] h-[38rem] rounded-md bg-cover bg-bottom flex justify-center mx-56 relative -z-10 mt-24">
+    <div className="bg-[url(/images/fr-2.jpg)] h-[38rem] rounded-md bg-cover bg-bottom flex justify-center mx-56 relative -z-10 mt-24">
       <div className="absolute bottom-38 bg-white p-4 rounded-full z-10 shadow-xl">
         <Play fill="black" />
       </div>

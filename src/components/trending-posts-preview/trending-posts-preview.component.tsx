@@ -10,7 +10,7 @@ const TrendingPostsPreview = () => {
         blow the minds of your family members.
       </p>
       <div className="grid grid-cols-4 gap-4 pt-3 pb-6">
-        <div className="bg-[url(tp-1.jpg)] bg-cover relative col-span-2">
+        <div className="bg-[url(images/tp-1.jpg)] bg-cover relative col-span-2">
           <div className="bg-black/10 hover:bg-black/30 backdrop-brightness-50 absolute inset-0 flex justify-center items-center text-white font-medium">
             <div className="flex justify-center flex-col items-center">
               <p className="bg-orange-50 dark:bg-gray-800 text-red-500 rounded-md p-2 w-fit text-[0.9rem]">

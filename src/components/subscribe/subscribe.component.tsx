@@ -3,7 +3,7 @@ import { Form } from "react-router";
 
 const Subscribe = () => {
   return (
-    <div className="bg-[url(/sub.webp)] bg-orange-50 dark:bg-gray-800 bg-cover mt-10 pt-30 pb-7 px-100  flex justify-center flex-col">
+    <div className="bg-[url(/images/sub.webp)] bg-orange-50 dark:bg-gray-800 bg-cover mt-10 pt-30 pb-7 px-100  flex justify-center flex-col">
       <h1 className="text-4xl mx-35 text-center font-medium">
         Subscribe to the best recipes feed.
       </h1>
