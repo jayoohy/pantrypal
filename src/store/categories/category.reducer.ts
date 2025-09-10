@@ -1,5 +1,16 @@
-import type { AnyAction } from "redux-saga";
-import { CATEGORIES_ACTION_TYPES, type Category } from "./category.types";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+
+export type Category = {
+  idCategory: string;
+  strCategory: string;
+  strCategoryThumb: string;
+  strCategoryDescription: string;
+};
+
+export type Categories = {
+  categories: Category[];
+};
 
 export type CategoriesState = {
   readonly categories: Category[];
@@ -13,21 +24,16 @@ export const CATEGORIES_INITIAL_STATE: CategoriesState = {
   error: null,
 };
 
-export const categoriesReducer = (
-  state = CATEGORIES_INITIAL_STATE,
-  action: AnyAction
-) => {
-  switch (action.type) {
-    case CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START:
-      return { ...state, isLoading: true };
+export const categoriesSlice = createSlice({
+  name: "category",
+  initialState: CATEGORIES_INITIAL_STATE,
+  reducers: {
+    setCategories: (state, action: PayloadAction<Category[]>) => {
+      state.categories = action.payload;
+    },
+  },
+});
 
-    case CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_SUCCESS:
-      return { ...state, categories: action.payload, isLoading: false };
+export const { setCategories } = categoriesSlice.actions;
 
-    case CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED:
-      return { ...state, error: action.payload, isLoading: false };
-
-    default:
-      return state;
-  }
-};
+export const categoriesReducer = categoriesSlice.reducer;
