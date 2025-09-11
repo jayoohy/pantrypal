@@ -1,20 +1,30 @@
 import { all, call, put, takeLatest } from "typed-redux-saga";
-import { CATEGORIES_ACTION_TYPES } from "./category.types";
+import { CATEGORIES_ACTION_TYPES, type Categories } from "./category.types";
 import {
   fetchCategoriesFailed,
   fetchCategoriesSuccess,
-} from "./category.action";
+} from "./category.reducer";
 
-export function* fetchCategoriesAsync() {
+const getData = async (): Promise<Categories | null> => {
   try {
-    const response = yield* call(
-      fetch,
+    const response = await fetch(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
-    const data = yield* response.json();
-    yield* put(fetchCategoriesSuccess(data.categories));
+    const data = await response.json();
+    console.log(data);
+    return data;
   } catch (error) {
-    yield* put(fetchCategoriesFailed(error as Error));
+    console.log(error);
+    return null;
+  }
+};
+
+export function* fetchCategoriesAsync() {
+  const data = yield* call(getData);
+  if (data === null) {
+    yield* put(fetchCategoriesFailed());
+  } else {
+    yield* put(fetchCategoriesSuccess(data.categories));
   }
 }
 

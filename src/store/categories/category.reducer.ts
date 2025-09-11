@@ -1,16 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-
-export type Category = {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
-};
-
-export type Categories = {
-  categories: Category[];
-};
+import type { Category } from "./category.types";
 
 export type CategoriesState = {
   readonly categories: Category[];
@@ -28,12 +18,23 @@ export const categoriesSlice = createSlice({
   name: "category",
   initialState: CATEGORIES_INITIAL_STATE,
   reducers: {
-    setCategories: (state, action: PayloadAction<Category[]>) => {
+    fetchCategoriesStart: (state) => {
+      state.isLoading = true;
+    },
+    fetchCategoriesSuccess: (state, action: PayloadAction<Category[]>) => {
+      state.isLoading = false;
       state.categories = action.payload;
+    },
+    fetchCategoriesFailed: (state) => {
+      state.isLoading = false;
     },
   },
 });
 
-export const { setCategories } = categoriesSlice.actions;
+export const {
+  fetchCategoriesStart,
+  fetchCategoriesSuccess,
+  fetchCategoriesFailed,
+} = categoriesSlice.actions;
 
 export const categoriesReducer = categoriesSlice.reducer;
