@@ -122,3 +122,6 @@
     @apply cursor-pointer;
   }
 }
+.categories_list_image {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
