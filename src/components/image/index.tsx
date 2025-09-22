@@ -2,7 +2,7 @@ import {
   LazyLoadImage,
   type LazyLoadImageProps,
 } from "react-lazy-load-image-component";
-import placeholder from "@/assets/placeholder.svg";
+import placeholder from "@/assets/placeholder.png";
 import { cn } from "@/lib/utils";
 
 interface EnhancedImageProps extends LazyLoadImageProps {

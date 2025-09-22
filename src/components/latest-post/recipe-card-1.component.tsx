@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { MessagesSquare } from "lucide-react";
 
-const LatestPost = () => {
+const RecipeCard1 = () => {
   return (
     <div className="grid grid-cols-3 gap-5">
       <Card>
@@ -94,4 +94,4 @@ const LatestPost = () => {
   );
 };
 
-export default LatestPost;
+export default RecipeCard1;

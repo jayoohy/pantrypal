@@ -1,7 +1,7 @@
 import { MessagesSquare } from "lucide-react";
 import { Card, CardContent, CardFooter } from "../ui/card";
 
-const TrendingPost = () => {
+const RecipeCard2 = () => {
   return (
     <Card className="bg-orange-50 dark:bg-gray-800">
       <CardContent>
@@ -32,4 +32,4 @@ const TrendingPost = () => {
   );
 };
 
-export default TrendingPost;
+export default RecipeCard2;

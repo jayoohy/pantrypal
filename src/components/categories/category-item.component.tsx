@@ -19,7 +19,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
       <Card
         className={cn(
           "h-full p-0 shadow-md overflow-hidden border-muted bg-muted/50 hover:bg-muted/60",
-          "transition-colors duration-300 aspect-[160/120] group relative"
+          "transition-colors duration-300 aspect-2/1 group relative"
         )}
       >
         <Image
@@ -27,8 +27,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
           alt={category.strCategory}
           className={cn("h-full w-auto")}
           wrapperClassName={cn(
-            "w-full aspect-[160/120] items-center justify-center !flex bg-white categories_list_image"
-            // "after:absolute after:bg-background/50 after:inset-0 after:content-[''] after:z-[1]"
+            "w-full aspect-2/1 items-center justify-center !flex categories_list_image"
           )}
           isZoomed
         />
@@ -36,7 +35,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
         <Link
           to={`/category/${category.idCategory}`}
           className={cn(
-            "bg-black/30 hover:bg-black/50 absolute inset-0 w-full z-[1] flex justify-center items-center text-white font-medium",
+            "bg-black/10 hover:bg-black/30 absolute inset-0 w-full z-[1] flex justify-center items-center text-white font-medium",
             "transition-colors duration-300 ease-in-out z-[1] dark:bg-black/50 dark:hover:bg-black/75"
           )}
         >

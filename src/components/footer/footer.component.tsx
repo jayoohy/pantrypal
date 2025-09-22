@@ -14,8 +14,8 @@ const Footer = () => {
     <>
       <ImageCollection />
       <div className="bg-orange-50 dark:bg-gray-800">
-        <div className=" flex justify-between py-15 px-30">
-          <div className="text-4xl font-semibold">Paypal</div>
+        <div className="flex justify-between py-15 px-30">
+          <div className="text-4xl font-semibold">PantryPal</div>
           <div className="text-[1.1rem]">
             <ul className="*:py-1 *:hover:text-green-500">
               <li>Dinner</li>

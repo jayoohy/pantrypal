@@ -2,6 +2,8 @@ import Pagelayout from "@/layouts/page-layout";
 import { createBrowserRouter } from "react-router";
 import Home from "./home/home.component";
 import { ThemeProvider } from "@/components/themes/theme-provider";
+import Categories from "./categories/categories.component";
+import Recipe from "./recipe/recipe.component";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "categories",
+        element: <Categories />,
+      },
+      {
+        path: "recipe",
+        element: <Recipe />,
       },
     ],
   },

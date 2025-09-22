@@ -1,4 +1,4 @@
-import LatestPost from "../latest-post/latest-post.component";
+import RecipeCard1 from "./recipe-card-1.component";
 
 const LatestPostsPreview = () => {
   return (
@@ -8,7 +8,7 @@ const LatestPostsPreview = () => {
         Looking for cooking inspiration? Below are our newly developed recipes
         for any occasion - check out and try them!
       </p>
-      <LatestPost />
+      <RecipeCard1 />
       <button className="bg-green-500 hover:bg-green-400 p-4 text-white rounded-sm w-[15%] mt-8">
         All latest posts
       </button>

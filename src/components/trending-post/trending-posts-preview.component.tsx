@@ -1,5 +1,5 @@
 import { Eye, MessagesSquare } from "lucide-react";
-import TrendingPost from "../trending-post/trending-post.component";
+import RecipeCard2 from "./recipe-card-2.component";
 
 const TrendingPostsPreview = () => {
   return (
@@ -31,8 +31,8 @@ const TrendingPostsPreview = () => {
             </div>
           </div>
         </div>
-        <TrendingPost />
-        <TrendingPost />
+        <RecipeCard2 />
+        <RecipeCard2 />
       </div>
       <button className="bg-red-500 hover:bg-red-400 p-4 text-white rounded-sm w-[15%] mt-8">
         All trending posts

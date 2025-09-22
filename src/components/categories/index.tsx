@@ -4,7 +4,7 @@ import { useAppSelector } from "@/utils/hooks";
 import { selectCategories } from "@/store/categories/category.selector";
 import CategoryItem from "./category-item.component";
 
-function Categories() {
+function CategoriesPreview() {
   const categories = useAppSelector(selectCategories);
   return (
     <div className="mt-56 my-28">
@@ -39,4 +39,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default CategoriesPreview;
