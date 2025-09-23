@@ -11,7 +11,6 @@ const getData = async (): Promise<Categories | null> => {
       "https://www.themealdb.com/api/json/v1/1/categories.php"
     );
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
