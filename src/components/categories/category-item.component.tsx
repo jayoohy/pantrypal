@@ -33,7 +33,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
         />
 
         <Link
-          to={`/category/${category.idCategory}`}
+          to={`/category/${category.strCategory.toLocaleLowerCase()}`}
           className={cn(
             "bg-black/10 hover:bg-black/30 absolute inset-0 w-full z-[1] flex justify-center items-center text-white font-medium",
             "transition-colors duration-300 ease-in-out z-[1] dark:bg-black/50 dark:hover:bg-black/75"

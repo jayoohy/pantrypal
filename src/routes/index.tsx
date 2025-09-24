@@ -4,6 +4,7 @@ import Home from "./home/home.component";
 import { ThemeProvider } from "@/components/themes/theme-provider";
 import Categories from "./categories/categories.component";
 import Recipe from "./recipe/recipe.component";
+import { categoryLoader } from "@/loaders/category.loader";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,12 @@ const router = createBrowserRouter([
       {
         path: "categories",
         element: <Categories />,
+      },
+      {
+        path: "category/:name",
+        element: <Categories />,
+        loader: categoryLoader,
+        // errorElement: <ErrorPage />,
       },
       {
         path: "recipe",
