@@ -29,7 +29,6 @@ const router = createBrowserRouter([
         path: "category/:name",
         element: <Categories />,
         loader: categoryLoader,
-        // errorElement: <ErrorPage />,
       },
       {
         path: "recipe",
