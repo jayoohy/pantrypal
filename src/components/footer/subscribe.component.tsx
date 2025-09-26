@@ -18,7 +18,10 @@ const Subscribe = () => {
             required
           />
           <span className="text-accent dark:text-white pr-3">|</span>
-          <Send />
+
+          <button>
+            <Send />
+          </button>
         </div>
         <div className=" m-8 flex justify-center items-center">
           <input type="checkbox" name="policy" className=" w-4 h-5" required />

@@ -18,13 +18,14 @@ const HeroSection: FC<HeroSectionProps> = ({ recipe }) => {
             <Image
               src={recipe.strMealThumb}
               alt={recipe.strMeal ?? "Recipe"}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover aspect-video mb-5"
+              wrapperClassName="aspect-video rounded-md"
               isZoomed
             />
           </Link>
         )}
       </div>
-      <div className="absolute bottom-38 left-130 bg-white p-4 rounded-full z-10 shadow-xl">
+      <div className="absolute bottom-38 left-132 bg-white p-4 rounded-full z-10 shadow-xl">
         <Play fill="black" />
       </div>
       <div

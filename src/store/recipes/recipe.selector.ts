@@ -3,9 +3,9 @@ import type { RootState } from "../store";
 
 const selectRecipeReducer = (state: RootState) => state.recipe;
 
-export const selectRecipe = createSelector(
+export const selectRecipes = createSelector(
   [selectRecipeReducer],
-  (recipeSlice) => recipeSlice.recipe.meals[0]
+  (recipeSlice) => recipeSlice.recipes
 );
 
 export const selectIsLoading = createSelector(

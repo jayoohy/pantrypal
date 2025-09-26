@@ -1,14 +1,14 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { Recipes } from "./recipe.types";
+import type { Recipe } from "./recipe.types";
 
 export type CategoriesState = {
-  readonly recipe: Recipes;
+  readonly recipes: Recipe[];
   readonly isLoading: boolean;
   readonly error: Error | null;
 };
 
 export const RECIPE_INITIAL_STATE: CategoriesState = {
-  recipe: { meals: [] },
+  recipes: [],
   isLoading: false,
   error: null,
 };
@@ -20,9 +20,9 @@ export const recipeSlice = createSlice({
     fetchRecipeStart: (state) => {
       state.isLoading = true;
     },
-    fetchRecipeSuccess: (state, action: PayloadAction<Recipes>) => {
+    fetchRecipeSuccess: (state, action: PayloadAction<Recipe[]>) => {
       state.isLoading = false;
-      state.recipe = action.payload;
+      state.recipes = action.payload;
     },
     fetchRecipeFailed: (state) => {
       state.isLoading = false;

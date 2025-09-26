@@ -1,8 +1,12 @@
 import { Form } from "react-router";
 import { Send } from "lucide-react";
 import RecipeCard3 from "../post-types/recipe-card-3.component";
+import { useAppSelector } from "@/utils/hooks";
+import { selectRecipes } from "@/store/recipes/recipe.selector";
 
 const Addition = () => {
+  const arr = useAppSelector(selectRecipes);
+
   return (
     <div className="col-span-2 ml-8">
       <div className="bg-[url(/images/sub.webp)] bg-orange-50 dark:bg-gray-900 bg-coverflex justify-center pt-30 pb-22 flex-col rounded-md">
@@ -20,7 +24,9 @@ const Addition = () => {
               required
             />
             <span className="text-gray-600 dark:text-white pr-3">|</span>
-            <Send width={35} />
+            <button type="submit">
+              <Send width={35} />
+            </button>
           </div>
           <div className="flex justify-center items-center mt-12">
             <input
@@ -40,7 +46,9 @@ const Addition = () => {
       </div>
       <div>
         <h1 className="text-2xl font-medium pt-15">Recent posts</h1>
-        <RecipeCard3 />
+        {arr.slice(1, 5).map((item) => (
+          <RecipeCard3 item={item} />
+        ))}
       </div>
     </div>
   );

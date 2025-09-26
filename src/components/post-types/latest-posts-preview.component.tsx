@@ -30,9 +30,9 @@ const LatestPostsPreview: FC<LatestPostsPreviewProps> = ({
 
       <Link
         to={"/l-posts"}
-        className="bg-green-500 hover:bg-green-400 p-4 text-white rounded-sm w-[15%] mt-8"
+        className="bg-green-500 hover:bg-green-400 p-3 pl-5 text-white rounded-sm w-[15%] mt-8"
       >
-        All latest posts
+        All latest recipes
       </Link>
     </div>
   );

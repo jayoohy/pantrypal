@@ -25,7 +25,9 @@ export function NavigationMenuDemo() {
         )}
       >
         <div>
-          <h1 className="text-xl font-semibold">PantryPal</h1>
+          <Link to={"/"} className="text-2xl font-semibold font-mono">
+            PantryPal
+          </Link>
         </div>
         <div>
           <NavigationMenu viewport={false}>
@@ -64,13 +66,13 @@ export function NavigationMenuDemo() {
                   <ul className="grid w-[200px] gap-4">
                     <li>
                       <NavigationMenuLink asChild>
-                        <Link to="/recipe">Components</Link>
+                        <Link to="/recipe/53034">Japanese Katsudon</Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link to="#">Documentation</Link>
+                        <Link to="/recipe/52974">Keleya Zaara</Link>
                       </NavigationMenuLink>
                       <NavigationMenuLink asChild>
-                        <Link to="#">Blocks</Link>
+                        <Link to="/recipe/52905">Chocolate Souffle</Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>
@@ -99,7 +101,7 @@ export function NavigationMenuDemo() {
                 >
                   <Link
                     className="bg-transparent hover:text-red-600 hover:bg-transparent"
-                    to="#"
+                    to="https://github.com/jayoohy"
                   >
                     About
                   </Link>
@@ -112,7 +114,7 @@ export function NavigationMenuDemo() {
                 >
                   <Link
                     className="bg-transparent hover:text-red-600 hover:bg-transparent"
-                    to="#"
+                    to="https://x.com/jay_ooh_y"
                   >
                     Contact
                   </Link>

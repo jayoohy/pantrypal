@@ -2,21 +2,36 @@ import { all, call, put, takeLatest } from "typed-redux-saga";
 import { RECIPE_ACTION_TYPES, type Recipes } from "./recipe.types";
 import { fetchRecipeFailed, fetchRecipeSuccess } from "./recipe.reducer";
 
-const getData = async (): Promise<Recipes | null> => {
+export const homeLoader = async () => {
+  const recipeIds = [52951, 52950, 52816, 52903, 53005, 52773, 52838];
+
   try {
-    const response = await fetch(
-      "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
+    const recipes = await Promise.all(
+      recipeIds.map(async (id) => {
+        const response = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+        );
+        const data: Recipes | null = await response.json();
+
+        if (!data || !data.meals) {
+          throw new Response("Error 404, recipe not found.", { status: 404 });
+        }
+
+        return data.meals[0];
+      })
     );
-    const data = await response.json();
-    return data;
+
+    return recipes; // this will be Recipe[]
   } catch (error) {
-    console.log(error);
-    return null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const err = error as any;
+    console.error(err);
+    throw new Response(err.message, { status: 500 });
   }
 };
 
 export function* fetchRecipeAsync() {
-  const data = yield* call(getData);
+  const data = yield* call(homeLoader);
   if (data === null) {
     yield* put(fetchRecipeFailed());
   } else {

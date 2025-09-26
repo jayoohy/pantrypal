@@ -1,18 +1,19 @@
 import Pagelayout from "@/layouts/page-layout";
 import { createBrowserRouter } from "react-router";
-import Home from "./home";
 import { ThemeProvider } from "@/components/themes/theme-provider";
-import Categories from "./categories";
-import Recipe from "./recipe-page";
 import { categoryLoader } from "@/loaders/category.loader";
 import { lazy, Suspense } from "react";
 import { recipeLoader } from "@/loaders/recipe.loader";
-import { homeLoader } from "@/loaders/home.loader";
-import TrendingPage from "./trending";
 import { postsLoader } from "@/loaders/posts.loader";
-import LatestPage from "./latests";
+import Preloader from "@/components/preloader";
+import ScrollToTop from "@/components/scroll-to-top";
 
+const Home = lazy(() => import("./home"));
+const Categories = lazy(() => import("./categories"));
 const RecipeCategory = lazy(() => import("./recipe-category"));
+const Recipe = lazy(() => import("./recipe-page"));
+const TrendingPage = lazy(() => import("./trending"));
+const LatestPage = lazy(() => import("./latests"));
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
     element: (
       <>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <Suspense fallback={null}>
+          <Suspense fallback={<Preloader />}>
+            <ScrollToTop />
             <Pagelayout />
           </Suspense>
         </ThemeProvider>
@@ -30,7 +32,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader: homeLoader,
       },
       {
         path: "categories",

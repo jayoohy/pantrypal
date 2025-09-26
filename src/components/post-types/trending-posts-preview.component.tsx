@@ -70,9 +70,9 @@ const TrendingPostsPreview: FC<TrendingPostsPreviewProps> = ({
       </div>
       <Link
         to={"/t-posts"}
-        className="bg-red-500 hover:bg-red-400 p-4 text-white rounded-sm w-[15%] mt-8"
+        className="bg-red-500 hover:bg-red-400 p-3 text-white rounded-sm w-[15%] mt-8"
       >
-        All trending posts
+        All trending recipes
       </Link>
     </div>
   );

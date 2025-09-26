@@ -19,15 +19,16 @@ const Footer = () => {
       <ImageCollection />
       <div className="bg-orange-50 dark:bg-gray-800">
         <div className="flex justify-between py-15 px-30">
-          <div className="text-4xl font-semibold">PantryPal</div>
-          <div className="">
-            <ul className="">
+          <div className="text-4xl font-semibold font-mono">PantryPal</div>
+          <div>
+            <ul>
               {categories.slice(0, 5).map((category) => {
                 return (
                   <Link
+                    key={category.idCategory}
                     to={`/category/${category.strCategory?.toLocaleLowerCase()}`}
                   >
-                    <li className="text-[1.15rem] py-[0.26rem] hover:text-green-500">
+                    <li className="text-[1.1rem] py-1 hover:text-green-500">
                       {category.strCategory}
                     </li>
                   </Link>
@@ -35,33 +36,53 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div className="text-[1.1rem]">
-            <ul className="*:py-1 *:hover:text-green-500">
-              <li>Home</li>
-              <li>About Us</li>
+          <div className="text-[1.1rem] **:py-1.5">
+            <ul className="*:hover:text-green-500">
+              <Link to={"/"}>
+                <li>Home</li>
+              </Link>
+              <Link to={"https://github.com/jayoohy/pantrypal"}>
+                <li>About Us</li>
+              </Link>
               <Link to={"/categories"}>
                 <li>Categories</li>
               </Link>
-              <li>All Posts</li>
-              <li>Contact us</li>
+              <Link to={"https://x.com/jay_ooh_y"}>
+                <li>Contact us</li>
+              </Link>
             </ul>
           </div>
           <div className="flex">
-            <div className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit">
+            <Link
+              to={"https://github.com/jayoohy/pantrypal"}
+              className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit"
+            >
               <Instagram />
-            </div>
-            <div className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit">
+            </Link>
+            <Link
+              to={"https://x.com/jay_ooh_y"}
+              className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit"
+            >
               <Twitter />
-            </div>
-            <div className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit">
+            </Link>
+            <Link
+              to={"https://github.com/jayoohy/pantrypal"}
+              className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit"
+            >
               <Facebook />
-            </div>
-            <div className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit">
+            </Link>
+            <Link
+              to={"https://github.com/jayoohy/pantrypal"}
+              className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit"
+            >
               <Github />
-            </div>
-            <div className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit">
+            </Link>
+            <Link
+              to={"https://github.com/jayoohy/pantrypal"}
+              className="rounded-full bg-orange-100 dark:bg-black/40 hover:bg-orange-50 dark:hover:bg-gray-800 p-2 h-fit"
+            >
               <Youtube />
-            </div>
+            </Link>
           </div>
         </div>
         <hr className="mx-30 border-1" />

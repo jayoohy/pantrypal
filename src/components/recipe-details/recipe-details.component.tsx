@@ -16,7 +16,8 @@ const RecipeDetails: FC<RecipeDetailsProps> = ({ recipe }) => {
       <Image
         src={recipe.strMealThumb !== null ? recipe.strMealThumb : placeholder}
         alt="food"
-        className="w-full aspect-[3.5/2] rounded-md mb-5"
+        className="w-full h-full object-cover aspect-video mb-5"
+        wrapperClassName="aspect-video rounded-md"
         isZoomed
       />
       <p className="text-2xl font-medium pb-3">Ingredients</p>

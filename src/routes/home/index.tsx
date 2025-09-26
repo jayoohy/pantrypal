@@ -3,11 +3,11 @@ import LatestPostsPreview from "@/components/post-types/latest-posts-preview.com
 import TrendingPostsPreview from "@/components/post-types/trending-posts-preview.component";
 import Subscribe from "@/components/footer/subscribe.component";
 import CategoriesPreview from "@/components/categories";
-import { useLoaderData } from "react-router";
-import type { Recipe } from "@/store/recipes/recipe.types";
+import { useAppSelector } from "@/utils/hooks";
+import { selectRecipes } from "@/store/recipes/recipe.selector";
 
 const Home = () => {
-  const arr = useLoaderData() as Recipe[];
+  const arr = useAppSelector(selectRecipes);
 
   return (
     <>
