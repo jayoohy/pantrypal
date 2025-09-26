@@ -12,12 +12,18 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "../themes/mode-toggle.component";
-import { Search, ThumbsUp } from "lucide-react";
+import { Heart, Search } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function NavigationMenuDemo() {
   return (
     <div className="relative">
-      <div className="flex justify-between py-2 px-4 border-b-2 border-b-accent fixed top-0 right-0 left-0 backdrop-blur-sm bg-white/40 dark:bg-black/40 z-50">
+      <div
+        className={cn(
+          "flex justify-between py-2 px-4 border-b-2 border-b-accent fixed top-0",
+          "right-0 left-0 backdrop-blur-sm bg-white/40 dark:bg-black/40 z-50"
+        )}
+      >
         <div>
           <h1 className="text-xl font-semibold">PantryPal</h1>
         </div>
@@ -75,10 +81,13 @@ export function NavigationMenuDemo() {
                   asChild
                   className={navigationMenuTriggerStyle()}
                 >
-                  <Link className="bg-transparent hover:bg-transparent" to="#">
+                  <Link
+                    to={"/category/chicken"}
+                    className="bg-transparent hover:bg-transparent"
+                  >
                     <div className="flex hover:text-red-600">
-                      <ThumbsUp className="h-[1.2rem] w-[1.2rem] text-black hover:text-red-600 dark:text-white mr-2 mt-0.5" />
-                      Easy
+                      <Heart className="h-[1.2rem] w-[1.2rem] text-black hover:text-red-600 dark:text-white mr-2 mt-0.5" />
+                      Chicken
                     </div>
                   </Link>
                 </NavigationMenuLink>

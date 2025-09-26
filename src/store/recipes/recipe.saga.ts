@@ -8,7 +8,6 @@ const getData = async (): Promise<Recipes | null> => {
       "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
     );
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);

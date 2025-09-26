@@ -2,6 +2,7 @@ import Image from "@/components/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { selectCategories } from "@/store/categories/category.selector";
 import { useAppSelector } from "@/utils/hooks";
+import { Link } from "react-router";
 
 const Categories = () => {
   const categories = useAppSelector(selectCategories);
@@ -14,17 +15,24 @@ const Categories = () => {
           return (
             <Card key={category.idCategory}>
               <CardContent>
-                <Image
-                  src={category.strCategoryThumb}
-                  alt={category.strCategory}
-                  className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
-                  isZoomed
-                />
+                <Link
+                  to={`/category/${category.strCategory.toLocaleLowerCase()}`}
+                >
+                  <Image
+                    src={category.strCategoryThumb}
+                    alt={category.strCategory}
+                    className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+                    isZoomed
+                  />{" "}
+                </Link>
               </CardContent>
               <CardFooter className="flex flex-col items-start">
-                <p className="text-red-500 text-2xl hover:text-black dark:hover:text-white">
+                <Link
+                  to={`/category/${category.strCategory.toLocaleLowerCase()}`}
+                  className="text-red-500 text-2xl hover:text-black dark:hover:text-white"
+                >
                   {category.strCategory}
-                </p>
+                </Link>
                 <h1 className="py-2">
                   {category.strCategoryDescription.slice(0, 60) + "..."}
                 </h1>

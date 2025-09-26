@@ -1,15 +1,15 @@
 import Image from "@/components/image";
-import type { Meal } from "@/types/meals";
+import type { Recipe } from "@/store/recipes/recipe.types";
 import { Link, useLoaderData } from "react-router";
 
-const RecipeCategory = () => {
-  const recipes = useLoaderData() as Meal[];
+const TrendingPage = () => {
+  const latestMeals = useLoaderData<Recipe[]>();
 
   return (
     <div className="mt-20">
-      <h1 className="text-4xl text-center font-bold">Recipe Categories</h1>
+      <h1 className="text-4xl text-center font-bold">Trending Posts</h1>
       <div className="mt-10 mb-40 mx-36 grid grid-cols-4 gap-6">
-        {recipes.map((recipe) => {
+        {latestMeals.map((recipe) => {
           return (
             <div className="max-w-xs rounded-2xl overflow-hidden bg-orange-50 dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300">
               {recipe.strMealThumb && (
@@ -38,4 +38,4 @@ const RecipeCategory = () => {
   );
 };
 
-export default RecipeCategory;
+export default TrendingPage;

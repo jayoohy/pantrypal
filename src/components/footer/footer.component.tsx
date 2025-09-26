@@ -7,8 +7,12 @@ import {
   Youtube,
 } from "lucide-react";
 import ImageCollection from "./image-collection.component";
+import { useAppSelector } from "@/utils/hooks";
+import { selectCategories } from "@/store/categories/category.selector";
+import { Link } from "react-router";
 
 const Footer = () => {
+  const categories = useAppSelector(selectCategories);
   const currentYear = new Date().getFullYear();
   return (
     <>
@@ -16,20 +20,28 @@ const Footer = () => {
       <div className="bg-orange-50 dark:bg-gray-800">
         <div className="flex justify-between py-15 px-30">
           <div className="text-4xl font-semibold">PantryPal</div>
-          <div className="text-[1.1rem]">
-            <ul className="*:py-1 *:hover:text-green-500">
-              <li>Dinner</li>
-              <li>Seafood</li>
-              <li>Gluten-Free</li>
-              <li>Healthy</li>
-              <li>Holiday</li>
+          <div className="">
+            <ul className="">
+              {categories.slice(0, 5).map((category) => {
+                return (
+                  <Link
+                    to={`/category/${category.strCategory?.toLocaleLowerCase()}`}
+                  >
+                    <li className="text-[1.15rem] py-[0.26rem] hover:text-green-500">
+                      {category.strCategory}
+                    </li>
+                  </Link>
+                );
+              })}
             </ul>
           </div>
           <div className="text-[1.1rem]">
             <ul className="*:py-1 *:hover:text-green-500">
               <li>Home</li>
               <li>About Us</li>
-              <li>Categories</li>
+              <Link to={"/categories"}>
+                <li>Categories</li>
+              </Link>
               <li>All Posts</li>
               <li>Contact us</li>
             </ul>

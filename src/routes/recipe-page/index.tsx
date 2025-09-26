@@ -1,10 +1,10 @@
 import Addition from "@/components/recipe-details/addition.component";
 import RecipeDetails from "@/components/recipe-details/recipe-details.component";
-import { selectRecipe } from "@/store/recipes/recipe.selector";
-import { useAppSelector } from "@/utils/hooks";
+import type { Recipe } from "@/store/recipes/recipe.types";
+import { useLoaderData } from "react-router";
 
-const Recipe = () => {
-  const recipe = useAppSelector(selectRecipe);
+const RecipePage = () => {
+  const recipe = useLoaderData() as Recipe;
 
   return (
     <div className="my-26 mx-56">
@@ -20,4 +20,4 @@ const Recipe = () => {
   );
 };
 
-export default Recipe;
+export default RecipePage;

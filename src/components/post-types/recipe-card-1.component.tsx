@@ -1,96 +1,54 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import type { Recipe } from "@/store/recipes/recipe.types";
 import { MessagesSquare } from "lucide-react";
+import type { FC } from "react";
+import Image from "../image";
+import { Link } from "react-router";
 
-const RecipeCard1 = () => {
+type RecipeCard1Props = {
+  recipe: Recipe;
+};
+
+const RecipeCard1: FC<RecipeCard1Props> = ({ recipe }) => {
   return (
-    <div className="grid grid-cols-3 gap-5">
-      <Card>
-        <CardContent>
-          <img
-            src="images/lp-1.jpg"
-            alt="food"
-            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
-          />
-        </CardContent>
-        <CardFooter className="flex flex-col items-start">
+    <Card>
+      <CardContent>
+        {recipe.strMealThumb && (
+          <Link key={recipe.idMeal} to={`/recipe/${recipe.idMeal}`}>
+            <Image
+              src={recipe.strMealThumb}
+              alt={recipe.strMeal || "meal"}
+              className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+            />
+          </Link>
+        )}
+      </CardContent>
+      <CardFooter className="flex flex-col items-start">
+        <Link to={`/category/${recipe.strCategory?.toLocaleLowerCase()}`}>
           <p className="text-red-500 hover:text-black dark:hover:text-white">
-            Vegan
+            {recipe.strCategory}
           </p>
-          <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
-            Hawaiian Chicken Poke Bowl
-          </h1>
-          <div className="flex">
-            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-              November 24, 2018
-            </p>
-            <span className="flex px-2">
-              <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-                0
-              </p>
-            </span>
-          </div>
-        </CardFooter>
-      </Card>
+        </Link>
 
-      <Card>
-        <CardContent>
-          <img
-            src="images/lp-2.jpg"
-            alt="food"
-            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
-          />
-        </CardContent>
-        <CardFooter className="flex flex-col items-start">
-          <p className="text-red-500 hover:text-black dark:hover:text-white">
-            Vegan
-          </p>
+        <Link key={recipe.idMeal} to={`/recipe/${recipe.idMeal}`}>
           <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
-            Leek Soup With Pasta
+            {recipe.strMeal}
           </h1>
-          <div className="flex">
-            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-              November 24, 2018
-            </p>
-            <span className="flex px-2">
-              <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-                0
-              </p>
-            </span>
-          </div>
-        </CardFooter>
-      </Card>
+        </Link>
 
-      <Card>
-        <CardContent>
-          <img
-            src="images/lp-3.jpg"
-            alt="food"
-            className="w-full transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
-          />
-        </CardContent>
-        <CardFooter className="flex flex-col items-start">
-          <p className="text-red-500 hover:text-black dark:hover:text-white">
-            Vegan
+        <div className="flex">
+          <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+            September 25, 2025
           </p>
-          <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
-            Zucchini-basil Soup With Chickpeas
-          </h1>
-          <div className="flex">
+          <span className="flex px-2">
+            <MessagesSquare className="pr-1" />
             <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-              November 24, 2018
+              1
             </p>
-            <span className="flex px-2">
-              <MessagesSquare className="pr-1" />
-              <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
-                0
-              </p>
-            </span>
-          </div>
-        </CardFooter>
-      </Card>
-    </div>
+          </span>
+        </div>
+      </CardFooter>
+    </Card>
   );
 };
 
