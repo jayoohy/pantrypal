@@ -14,6 +14,7 @@ const RecipeCategory = lazy(() => import("./recipe-category"));
 const Recipe = lazy(() => import("./recipe-page"));
 const TrendingPage = lazy(() => import("./trending"));
 const LatestPage = lazy(() => import("./latests"));
+const SearchPage = lazy(() => import("./search"));
 
 const router = createBrowserRouter([
   {
@@ -33,31 +34,34 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: "categories",
-        element: <Categories />,
-      },
-      {
-        path: "category/:category",
-        element: <RecipeCategory />,
-        loader: categoryLoader,
-      },
-      {
-        path: "recipe/:recipeId",
-        element: <Recipe />,
-        loader: recipeLoader,
-      },
-      {
-        path: "t-posts",
-        element: <TrendingPage />,
-        loader: postsLoader,
-      },
-
-      {
-        path: "l-posts",
-        element: <LatestPage />,
-        loader: postsLoader,
-      },
+      //   {
+      //     path: "categories",
+      //     element: <Categories />,
+      //   },
+      //   {
+      //     path: "category/:category",
+      //     element: <RecipeCategory />,
+      //     loader: categoryLoader,
+      //   },
+      //   {
+      //     path: "recipe/:recipeId",
+      //     element: <Recipe />,
+      //     loader: recipeLoader,
+      //   },
+      //   {
+      //     path: "t-posts",
+      //     element: <TrendingPage />,
+      //     loader: postsLoader,
+      //   },
+      //   {
+      //     path: "l-posts",
+      //     element: <LatestPage />,
+      //     loader: postsLoader,
+      //   },
+      //   {
+      //     path: "search",
+      //     element: <SearchPage />,
+      //   },
     ],
   },
 ]);

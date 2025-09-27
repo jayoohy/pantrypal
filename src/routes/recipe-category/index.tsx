@@ -1,10 +1,10 @@
-import Image from "@/components/image";
 import PagePagination from "@/components/pagination";
+import MealsList from "@/components/post-types/meals-list.coponents";
 import { usePagination } from "@/hooks/usePagination";
 import { selectCategories } from "@/store/categories/category.selector";
 import type { Meal } from "@/types/meals";
 import { useAppSelector } from "@/utils/hooks";
-import { Link, useLoaderData, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 
 const RecipeCategory = () => {
   const recipes = useLoaderData() as Meal[];
@@ -34,32 +34,8 @@ const RecipeCategory = () => {
       </p>
       <div className="mb-40 space-y-10">
         <div className="mt-10 mx-36 grid grid-cols-4 gap-6">
-          {paginatedItems?.map((recipe) => {
-            return (
-              <div
-                key={recipe.idMeal}
-                className="max-w-xs rounded-2xl overflow-hidden bg-orange-50 dark:bg-gray-900 shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                {recipe.strMealThumb && (
-                  <Link key={recipe.idMeal} to={`/recipe/${recipe.idMeal}`}>
-                    <Image
-                      src={recipe.strMealThumb}
-                      alt={recipe.strMeal ?? "Recipe"}
-                      className="w-full h-48 object-cover"
-                      isZoomed
-                    />
-                  </Link>
-                )}
-                <div className="p-4 text-center">
-                  <Link
-                    to={`/recipe/${recipe.idMeal}`}
-                    className="text-2xl font-semibold text-gray-800 dark:text-white hover:text-red-500 dark:hover:text-red-500"
-                  >
-                    {recipe.strMeal ?? "Unknown Recipe"}
-                  </Link>
-                </div>
-              </div>
-            );
+          {paginatedItems?.map((meal) => {
+            return <MealsList meal={meal} />;
           })}
         </div>
         <PagePagination

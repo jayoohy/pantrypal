@@ -12,7 +12,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "../themes/mode-toggle.component";
-import { Heart, Search } from "lucide-react";
+import { Heart, Menu, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function NavigationMenuDemo() {
@@ -20,7 +20,7 @@ export function NavigationMenuDemo() {
     <div className="relative">
       <div
         className={cn(
-          "flex justify-between py-2 px-4 border-b-2 border-b-accent fixed top-0",
+          "flex justify-between items-center py-1 px-2 md:py-2 md:px-4 border-b-2 border-b-accent fixed top-0",
           "right-0 left-0 backdrop-blur-sm bg-white/40 dark:bg-black/40 z-50"
         )}
       >
@@ -29,7 +29,7 @@ export function NavigationMenuDemo() {
             PantryPal
           </Link>
         </div>
-        <div>
+        <div className="hidden md:flex">
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
               <NavigationMenuItem>
@@ -123,11 +123,14 @@ export function NavigationMenuDemo() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex">
-          <Link to="#">
-            <Search className="mr-4 mt-1.5" />
+        <div className="flex items-center">
+          <Link to="/search">
+            <Search className="mr-4 mt-1.5 mb-1" />
           </Link>
-          <ModeToggle />
+          <div className="scale-75 md:scale-100">
+            <ModeToggle />
+          </div>
+          <Menu className="md:hidden pr-2 pl-3 size-12" />
         </div>
       </div>
     </div>

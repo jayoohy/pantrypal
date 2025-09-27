@@ -12,14 +12,14 @@ const Home = () => {
   return (
     <>
       <HeroSection recipe={arr[0]} />
-      <CategoriesPreview />
+      {/* <CategoriesPreview />
       <LatestPostsPreview recipe1={arr[1]} recipe2={arr[2]} recipe3={arr[3]} />
       <TrendingPostsPreview
         recipe1={arr[4]}
         recipe2={arr[5]}
         recipe3={arr[6]}
       />
-      <Subscribe />
+      <Subscribe /> */}
     </>
   );
 };

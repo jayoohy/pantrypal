@@ -1,4 +1,5 @@
 import type { Recipe, Recipes } from "@/store/recipes/recipe.types";
+import type { Meal } from "@/types/meals";
 
 export function getIngredientsWithMeasures(recipe: Recipe): string[] {
   const ingredients: string[] = [];
@@ -33,6 +34,28 @@ export const fetchRandomMealsFromList = async (
     return shuffled.slice(0, count);
   } catch (error) {
     console.error(error);
+    return [];
+  }
+};
+
+export const fetchMealsByIngredient = async (
+  ingredient: string
+): Promise<Meal[]> => {
+  try {
+    const response = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${encodeURIComponent(
+        ingredient
+      )}`
+    );
+    const data = await response.json();
+
+    if (!data.meals) {
+      return [];
+    }
+
+    return data.meals;
+  } catch (error) {
+    console.error("Error fetching meals by ingredient:", error);
     return [];
   }
 };
