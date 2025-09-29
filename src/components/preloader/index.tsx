@@ -8,7 +8,7 @@ const Preloader = () => {
         animationData={animationData}
         loop={true}
         autoPlay={true}
-        className="size-50"
+        className="size-20 md:size-50"
       ></Lottie>
     </div>
   );

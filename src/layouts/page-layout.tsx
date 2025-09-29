@@ -1,13 +1,18 @@
+import { AppSidebar } from "@/components/app-sidebar";
 import Footer from "@/components/footer/footer.component";
 import { NavigationMenuDemo } from "@/components/navigation/navigation.component";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import { Outlet } from "react-router";
 
-const Pagelayout = () => {
+const Pagelayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <NavigationMenuDemo />
+      <SidebarProvider defaultOpen={false}>
+        <AppSidebar />
+        <NavigationMenuDemo />
+        {children}
+      </SidebarProvider>
       <Outlet />
-      <h1 className="pt-100 pb-10">Hello</h1>
       <Footer />
     </>
   );

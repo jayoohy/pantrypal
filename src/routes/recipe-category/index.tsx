@@ -26,14 +26,14 @@ const RecipeCategory = () => {
 
   return (
     <div className="mt-20">
-      <h1 className="text-4xl text-center font-bold capitalize">
+      <h1 className="text-2xl lg:text-4xl text-center font-bold capitalize">
         {categoryName.category}
       </h1>
-      <p className="mx-36 mt-4 text-xl text-gray-600 dark:text-gray-300 text-justify leading-8">
+      <p className="mx-10 md:mx-20 lg:mx-36 mt-4 text-[0.9rem] md:text-xl text-gray-600 dark:text-gray-300 text-justify leading-6 md:leading-8">
         {desc}
       </p>
       <div className="mb-40 space-y-10">
-        <div className="mt-10 mx-36 grid grid-cols-4 gap-6">
+        <div className="mt-10 mx-10 md:mx-20 lg:mx-36 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-6 md:gap-y-6 md:gap-3 xl:gap-6">
           {paginatedItems?.map((meal) => {
             return <MealsList meal={meal} />;
           })}

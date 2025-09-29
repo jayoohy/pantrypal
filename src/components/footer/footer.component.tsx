@@ -38,7 +38,7 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div className="text-[0.8rem] md:text-[1.1rem] **:py-1.5">
+          <div className="text-[0.7rem] md:text-[1.1rem] **:py-1.5">
             <ul className="*:hover:text-green-500">
               <Link to={"/"}>
                 <li>Home</li>
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="mx-5 lg:mx-30 border-1" />
-        <div className="flex text-[0.8rem] md:text-[1rem] justify-center md:justify-between p-3 md:pt-5 md:pb-10 lg:mx-30">
+        <div className="flex text-[0.7rem] md:text-[1rem] justify-center md:justify-between p-3 md:pt-5 md:pb-10 lg:mx-30">
           <div className="text-gray-500 dark:text-white">
             Copyright <span>{currentYear}</span> -{" "}
             <span className="text-black dark:text-white">PantryPal</span>. All

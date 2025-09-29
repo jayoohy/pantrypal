@@ -1,5 +1,6 @@
 import Addition from "@/components/recipe-details/addition.component";
 import RecipeDetails from "@/components/recipe-details/recipe-details.component";
+import { cn } from "@/lib/utils";
 import type { Recipe } from "@/store/recipes/recipe.types";
 import { Link, useLoaderData } from "react-router";
 
@@ -7,15 +8,20 @@ const RecipePage = () => {
   const recipe = useLoaderData() as Recipe;
 
   return (
-    <div className="my-26 mx-56">
-      <h1 className="text-4xl pb-4 font-bold">{recipe.strMeal}</h1>
+    <div className="my-26 mx-8 md:mx-30 xl:mx-50">
+      <h1 className="text-2xl lg:text-4xl pb-4 font-bold">{recipe.strMeal}</h1>
       <Link to={`/category/${recipe.strCategory?.toLocaleLowerCase()}`}>
-        <span className="bg-gray-200 dark:bg-gray-800 text-red-500 hover:text-black dark:hover:text-white p-1.5 rounded-md">
+        <span
+          className={cn(
+            "bg-gray-200 dark:bg-gray-800 text-red-500 hover:text-black",
+            "dark:hover:text-white p-1.5 rounded-md text-[0.6rem] lg:text-[1rem]"
+          )}
+        >
           {recipe.strCategory}
         </span>
       </Link>
 
-      <div className="mt-4 grid grid-cols-6">
+      <div className="mt-4 xl:grid xl:grid-cols-6">
         <RecipeDetails recipe={recipe} />
         <Addition />
       </div>

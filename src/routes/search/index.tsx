@@ -49,21 +49,26 @@ const SearchPage = () => {
   console.log(meals);
 
   return (
-    <div className="mt-24 mx-56">
+    <div className="mt-24 mx-8 md:mx-30 xl:mx-50">
       <div className="flex justify-center items-center relative">
-        <input
-          className="leading-10 w-[40%] text-center outline-2 outline-offset-2 outline-black dark:outline-white rounded-md mr-2"
-          type="search"
-          value={searchField}
-          placeholder="Search by ingredient"
-          onChange={onSearchChange}
-          onKeyDown={handleKeyDown}
-        />
-        <Search onClick={onSearchClick} className="absolute right-89" />
+        <div className="relative w-[75%] lg:w-[40%]">
+          <input
+            className="leading-10 text-center w-full outline-2 outline-offset-2 outline-black dark:outline-white rounded-md"
+            type="search"
+            value={searchField}
+            placeholder="Search by ingredient"
+            onChange={onSearchChange}
+            onKeyDown={handleKeyDown}
+          />
+          <Search
+            onClick={onSearchClick}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+          />
+        </div>
       </div>
       {meals.length > 0 ? (
         <div className="mb-40 space-y-10">
-          <div className="mt-10 grid grid-cols-4 gap-6">
+          <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 gap-y-6 md:gap-y-6 md:gap-3 xl:gap-6">
             {paginatedItems?.map((meal) => {
               return <MealsList meal={meal} />;
             })}
@@ -76,7 +81,9 @@ const SearchPage = () => {
         </div>
       ) : (
         <div className="text-center my-[25vh]">
-          <p className="text-2xl font-[cursive]">Type in an ingredient...</p>
+          <p className="text-xl lg:text-2xl font-[cursive]">
+            Type in an ingredient...
+          </p>
         </div>
       )}
     </div>

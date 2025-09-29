@@ -34,34 +34,34 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      //   {
-      //     path: "categories",
-      //     element: <Categories />,
-      //   },
-      //   {
-      //     path: "category/:category",
-      //     element: <RecipeCategory />,
-      //     loader: categoryLoader,
-      //   },
-      //   {
-      //     path: "recipe/:recipeId",
-      //     element: <Recipe />,
-      //     loader: recipeLoader,
-      //   },
-      //   {
-      //     path: "t-posts",
-      //     element: <TrendingPage />,
-      //     loader: postsLoader,
-      //   },
-      //   {
-      //     path: "l-posts",
-      //     element: <LatestPage />,
-      //     loader: postsLoader,
-      //   },
-      //   {
-      //     path: "search",
-      //     element: <SearchPage />,
-      //   },
+      {
+        path: "categories",
+        element: <Categories />,
+      },
+      {
+        path: "category/:category",
+        element: <RecipeCategory />,
+        loader: categoryLoader,
+      },
+      {
+        path: "recipe/:recipeId",
+        element: <Recipe />,
+        loader: recipeLoader,
+      },
+      {
+        path: "t-posts",
+        element: <TrendingPage />,
+        loader: postsLoader,
+      },
+      {
+        path: "l-posts",
+        element: <LatestPage />,
+        loader: postsLoader,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
+      },
     ],
   },
 ]);

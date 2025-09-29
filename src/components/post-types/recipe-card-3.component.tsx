@@ -11,17 +11,17 @@ const RecipeCard3: FC<RecipeCard3Props> = ({ item }) => {
   return (
     <Link
       to={`/recipe/${item.idMeal}`}
-      className="mt-8 grid grid-cols-2 items-center"
+      className="mt-8 grid grid-cols-3 items-center"
     >
       {item.strMealThumb && (
         <Image
           src={item.strMealThumb}
           alt="food"
-          className="w-[8rem] rounded-md"
+          className="rounded-md"
           isZoomed
         />
       )}
-      <div className="space-y-4 font-semibold">
+      <div className="space-y-4 ml-4 font-semibold col-span-2">
         <h1 className="text-[1.1rem]">{item.strMeal}</h1>
         <div className="flex">
           <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">

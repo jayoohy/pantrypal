@@ -18,15 +18,15 @@ const MealsList: FC<MealsListProps> = ({ meal }) => {
           <Image
             src={meal.strMealThumb}
             alt={meal.strMeal ?? "Recipe"}
-            className="w-full h-48 object-cover"
+            className="w-full object-cover"
             isZoomed
           />
         </Link>
       )}
-      <div className="p-4 text-center">
+      <div className="py-4 md:px-4 text-center">
         <Link
           to={`/recipe/${meal.idMeal}`}
-          className="text-2xl font-semibold text-gray-800 dark:text-white hover:text-red-500 dark:hover:text-red-500"
+          className="text-xl lg:text-2xl font-semibold text-gray-800 dark:text-white hover:text-red-500 dark:hover:text-red-500"
         >
           {meal.strMeal ?? "Unknown Recipe"}
         </Link>

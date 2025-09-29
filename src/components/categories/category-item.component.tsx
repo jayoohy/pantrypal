@@ -14,7 +14,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
   return (
     <CarouselItem
       key={category.idCategory}
-      className="basis-3/4 sm:basis-1/2 md:basis-1/3 lg:basis-1/5 px-2"
+      className="basis-2/5 md:basis-1/5 px-2"
     >
       <Card
         className={cn(

@@ -25,24 +25,24 @@ const RecipeCard1: FC<RecipeCard1Props> = ({ recipe }) => {
       </CardContent>
       <CardFooter className="flex flex-col items-start">
         <Link to={`/category/${recipe.strCategory?.toLocaleLowerCase()}`}>
-          <p className="text-red-500 hover:text-black dark:hover:text-white">
+          <p className="text-red-500 text-[0.6rem] lg:text-[1rem] hover:text-black dark:hover:text-white">
             {recipe.strCategory}
           </p>
         </Link>
 
         <Link key={recipe.idMeal} to={`/recipe/${recipe.idMeal}`}>
-          <h1 className="hover:text-red-500 text-2xl font-semibold py-2">
+          <h1 className="hover:text-red-500 text-xl lg:text-2xl font-semibold py-2 line-clamp-3 lg:line-clamp-none">
             {recipe.strMeal}
           </h1>
         </Link>
 
         <div className="flex">
-          <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+          <p className="text-gray-600 text-[0.6rem] lg:text-[0.8rem] xl:text-[1rem] dark:text-gray-300 hover:text-black dark:hover:text-white">
             September 25, 2025
           </p>
-          <span className="flex px-2">
-            <MessagesSquare className="pr-1" />
-            <p className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
+          <span className="flex pl-1 xl:px-2">
+            <MessagesSquare className="pr-1 mt-[-0.3rem] md:mt-0 scale-75 lg:scale-100" />
+            <p className="text-gray-600 text-[0.6rem] lg:text-[1rem] dark:text-gray-300 hover:text-black dark:hover:text-white">
               1
             </p>
           </span>

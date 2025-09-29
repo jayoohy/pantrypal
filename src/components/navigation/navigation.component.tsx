@@ -12,8 +12,9 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "../themes/mode-toggle.component";
-import { Heart, Menu, Search } from "lucide-react";
+import { Heart, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SidebarTrigger } from "../ui/sidebar";
 
 export function NavigationMenuDemo() {
   return (
@@ -130,7 +131,9 @@ export function NavigationMenuDemo() {
           <div className="scale-75 md:scale-100">
             <ModeToggle />
           </div>
-          <Menu className="md:hidden pr-2 pl-3 size-12" />
+          <div className="md:hidden flex items-center">
+            <SidebarTrigger />
+          </div>
         </div>
       </div>
     </div>

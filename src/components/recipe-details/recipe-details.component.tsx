@@ -12,7 +12,7 @@ const RecipeDetails: FC<RecipeDetailsProps> = ({ recipe }) => {
   const array = getIngredientsWithMeasures(recipe);
 
   return (
-    <div className="col-span-4">
+    <div className="xl:col-span-4">
       <Image
         src={recipe.strMealThumb !== null ? recipe.strMealThumb : placeholder}
         alt="food"
@@ -20,20 +20,18 @@ const RecipeDetails: FC<RecipeDetailsProps> = ({ recipe }) => {
         wrapperClassName="aspect-video rounded-md"
         isZoomed
       />
-      <p className="text-2xl font-medium pb-3">Ingredients</p>
-      <div className="text-[1.2rem] text-gray-600 dark:text-gray-300 grid grid-cols-3 gap-2">
+      <p className="text-xl lg:text-2xl font-medium pb-3">Ingredients</p>
+      <div className="text-[0.8rem] md:text-[1rem] lg:text-[1.2rem] text-gray-600 dark:text-gray-300 grid grid-cols-2 lg:grid-cols-3 gap-2">
         {array.map((arr) => (
           <div>{arr}</div>
         ))}
       </div>
-      <p className="text-2xl font-medium pt-8 pb-3">Directions</p>
-      <p className="text-[1.3rem] text-justify text-gray-600 dark:text-gray-300 leading-10">
+      <p className="text-xl lg:text-2xl font-medium pt-8 pb-3">Directions</p>
+      <p className="text-[0.8rem] md:text-[1rem] lg:text-[1.3rem] text-justify text-gray-600 dark:text-gray-300 leading-7 lg:leading-10">
         {recipe.strInstructions}
       </p>
-      <div className="pt-5">
+      <div className="relative aspect-video w-full pt-5 mt-5 mb-10 xl:mb-0">
         <iframe
-          width="560"
-          height="315"
           src={
             recipe.strYoutube
               ? recipe.strYoutube.replace("watch?v=", "embed/")
@@ -42,7 +40,8 @@ const RecipeDetails: FC<RecipeDetailsProps> = ({ recipe }) => {
           title="Recipe video"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+          className="absolute top-0 left-0 w-full h-full rounded-md"
+        />
       </div>
     </div>
   );
