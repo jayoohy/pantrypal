@@ -14,7 +14,7 @@ import {
 import { ModeToggle } from "../themes/mode-toggle.component";
 import { Heart, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { SheetDemo } from "../sheet-demo";
+import { SheetDemo } from "../side-bar";
 import { Button } from "../ui/button";
 export function NavigationMenuDemo() {
   return (
@@ -124,16 +124,20 @@ export function NavigationMenuDemo() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex items-center">
-          <Link to="/search">
+        <div className="flex items-center md:gap-2">
+          <div className="scale-75 md:scale-100">
             <Button variant="outline" size="icon" asChild>
-              <Search />
+              <Link to="/search">
+                <Search />
+              </Link>
             </Button>
-          </Link>
+          </div>
           <div className="scale-75 md:scale-100">
             <ModeToggle />
           </div>
-          <SheetDemo />
+          <div className="scale-75 md:scale-100">
+            <SheetDemo />
+          </div>
         </div>
       </div>
     </div>
