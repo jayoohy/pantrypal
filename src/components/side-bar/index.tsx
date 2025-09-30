@@ -22,11 +22,6 @@ const items = [
     icon: ChefHat,
   },
   {
-    title: "Featured Recipes",
-    url: "/featured",
-    icon: Heart,
-  },
-  {
     title: "Chicken Recipes",
     url: "/category/chicken",
     icon: Heart,
