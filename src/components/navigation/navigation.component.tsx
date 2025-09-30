@@ -12,8 +12,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "../themes/mode-toggle.component";
-import { Heart, Menu, Search } from "lucide-react";
+import { Heart, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SheetDemo } from "../sheet-demo";
+import { Button } from "../ui/button";
 export function NavigationMenuDemo() {
   return (
     <div className="relative">
@@ -124,12 +126,14 @@ export function NavigationMenuDemo() {
         </div>
         <div className="flex items-center">
           <Link to="/search">
-            <Search className="mr-4 mt-1.5 mb-1" />
+            <Button variant="outline" size="icon" asChild>
+              <Search />
+            </Button>
           </Link>
           <div className="scale-75 md:scale-100">
             <ModeToggle />
           </div>
-          <Menu className="md:hidden pr-2 pl-3 size-12" />
+          <SheetDemo />
         </div>
       </div>
     </div>
