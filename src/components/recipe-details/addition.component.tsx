@@ -45,9 +45,7 @@ const Addition = () => {
       </div>
       <div>
         <h1 className="text-2xl font-medium pt-15">Recent posts</h1>
-        {arr.slice(1, 5).map((item) => (
-          <RecipeCard3 item={item} />
-        ))}
+        {arr && arr.slice(1, 5).map((item) => <RecipeCard3 item={item} />)}
       </div>
     </div>
   );
