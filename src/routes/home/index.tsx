@@ -5,11 +5,12 @@ import Subscribe from "@/components/footer/subscribe.component";
 import CategoriesPreview from "@/components/categories";
 import { useAppSelector } from "@/utils/hooks";
 import { selectRecipes } from "@/store/recipes/recipe.selector";
+import Preloader from "@/components/preloader";
 
 const Home = () => {
   const arr = useAppSelector(selectRecipes);
 
-  return (
+  return arr ? (
     <>
       <HeroSection recipe={arr[0]} />
       <CategoriesPreview />
@@ -21,6 +22,8 @@ const Home = () => {
       />
       <Subscribe />
     </>
+  ) : (
+    <Preloader />
   );
 };
 

@@ -1,14 +1,14 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import type { Recipe } from "./recipe.types";
 
-export type CategoriesState = {
-  readonly recipes: Recipe[];
+export type ReducerState = {
+  readonly recipes: Recipe[] | null;
   readonly isLoading: boolean;
   readonly error: Error | null;
 };
 
-export const RECIPE_INITIAL_STATE: CategoriesState = {
-  recipes: [],
+export const RECIPE_INITIAL_STATE: ReducerState = {
+  recipes: null,
   isLoading: false,
   error: null,
 };
